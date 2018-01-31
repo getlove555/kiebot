@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import ASUL
-from ASUL.lib.curve.ttypes import *
+import LINETCR
+#import wikipedia
+from LINETCR.lib.curve.ttypes import *
+#from ASUL.lib.curve.ttypes import *
 from datetime import datetime
 # https://kaijento.github.io/2017/05/19/web-scraping-youtube.com/
 from bs4 import BeautifulSoup
@@ -11,32 +13,32 @@ from gtts import gTTS
 import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,os,subprocess,requests,tempfile
 
 
-cl = ASUL.LINE()
+cl =LINETCR.LINE()
 #cl.login(qr=True)
 cl.login(token='EpUyuyVu1x8EDCi5gACc.YLgVP2FFH7O3buLlL8m1xa.DkY0NEPsqIALdCFhKFqtmoGdaWa4yrmxdSolfMJ6TVM')
 cl.loginResult()
 
-ki = ASUL.LINE()
+ki = LINETCR.LINE()
 #ki.login(qr=True)
 ki.login(token='EpfBKkRMziKelKlyRGi7.MRMd87JLMY8NA0SCe7JEXW.KI1bXl2LSxGYyARTFmCgfTO8wmYjlC3vV+aQBxs6dj4')
 ki.loginResult()
 
-ki2 = ASUL.LINE()
+ki2 = LINETCR.LINE()
 #ki2.login(qr=True)
 ki2.login(token='EpfBKkRMziKelKlyRGi7.MRMd87JLMY8NA0SCe7JEXW.KI1bXl2LSxGYyARTFmCgfTO8wmYjlC3vV+aQBxs6dj4')
 ki2.loginResult()
 
-ki3 = ASUL.LINE()
+ki3 = LINETCR.LINE()
 #ki3.login(qr=True)
 ki3.login(token='EpfBKkRMziKelKlyRGi7.MRMd87JLMY8NA0SCe7JEXW.KI1bXl2LSxGYyARTFmCgfTO8wmYjlC3vV+aQBxs6dj4')
 ki3.loginResult()
 
-ki4 = ASUL.LINE()
+ki4 = LINETCR.LINE()
 #ki4.login(qr=True)
 ki4.login(token='EpfBKkRMziKelKlyRGi7.MRMd87JLMY8NA0SCe7JEXW.KI1bXl2LSxGYyARTFmCgfTO8wmYjlC3vV+aQBxs6dj4')
 ki4.loginResult()
 
-ki5 = ASUL.LINE()
+ki5 = LINETCR.LINE()
 #ki5.login(qr=True)
 ki5.login(token='EpfBKkRMziKelKlyRGi7.MRMd87JLMY8NA0SCe7JEXW.KI1bXl2LSxGYyARTFmCgfTO8wmYjlC3vV+aQBxs6dj4')
 ki5.loginResult()
@@ -58,91 +60,97 @@ sys.setdefaultencoding('utf-8')
 helpMessage =""".         *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.:
                              K̲̲̅̅ ̲̲̅̅I̲̲̅̅ ̲̲̅̅E̲̲̅̅B̲̲̅̅O̲̲̅̅ ̲̲̅̅T̲̲̅̅ ̲̲̅̅L̲̲̅̅O̲̲̅̅V̲̲̅̅E̲̲̅̅L̲̲̅̅N̲̲̅̅E̲̲̅̅
                           *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.
-➣ [Mention 
-➣ [Me @
-➣ [Point  
-➣ [Read  
-➣ [Ginfo 
-➣ [Glist  
-➣ [Cancel 
-➣ [Mid @   
-➣ [Invite   
-➣ [Invite:   
-➣ [Whitelist @
+||=====คำสั่งทั่วไป=====||
+➣ [Me @]➣ดูคอนแทคเพื่อน
+➣ [Tr-th]➣แปลเป็นไทย
+➣ [Tr-en]➣แปลเป็นอังกฤษ
+➣ [Ginfo]➣ดูข้อมูลกลุ่ม
+➣ [Glist]➣ส่งของขวัญ
+➣ [Cancel]➣ยกเลิกเชิน
+➣ [Mid @]➣ดูเอมไอดีเพื่อน
+➣ [Invite]➣เชินตามคอนแทค
+➣ [Invite: ]➣เชินด้วยเอมไอดี
+➣ [Whitelist @]
 ➣ [Whitelist: 
 ➣ [Whitelist  
 ➣ [Blacklist @   
 ➣ [Blacklist: 
 ➣ [Blacklist 
-➣ [Clear ban 
-➣ [Link on 
-➣ [Link off 
-➣ [Gurl   
-➣ [Url    
-➣ [Gname   
-➣ [Banlist  
-➣ [Details grup
-➣ [Inviteme:
-➣ [Info grup
+➣ [Clear ban]เชคแบนโชว์คอนแทค
+➣ [Link on]☆เปิดลิ้ง 
+➣ [Link off]☆ปิดลิ้ง
+➣ [Gurl]
+➣ [Url ]➣ลิ้งกลุ่ม
+➣ [Gname]
+➣ [Banlist ]
+➣ [Details grup]
+➣ [Inviteme:]
+➣ [Info grup]
+➣ [Gift-Allgift]➣ [ส่งของขวัญ-ทั้งหมด
 ➣ [Clear grup
-➣️ [Reject 
+➣️ [Reject]☆ลบรันตัวเอง
 ➣ [Aslogin 
-➣ [Mic:
-➣️ [Reject1
-➣ [Nuke
-➣ [Ratakan
-➣ [Kick @  
+➣ [Mic:]☆เชคคอนแทค
+➣️ [Reject1]➣ [ลบรันคิกเก้อ
+➣ [Nuke]☆ล้างห้อง
+➣ [Mention,Tagall]➣แทคทั้งห้อง
+➣ [Kick @ 
 ➣ [Kick: 
 ➣ [Bc:ct 
 ➣ [Bc:grup
 ➣ [Block @
-➣ [Blocklist
-➣ [Spam on/off
-➣ [ไวรัส01
+➣ [Youtube]➣ยูทูป
+➣ [vdo]
+➣ [Blocklist]
+➣ [Spam on/off]➣รันข้อความแชท
+➣ [ไวรัส01]
 ➣ [Bot:ct ]
-➣ [Bot:grup
+➣ [Bot:grup.]
 ➣ [Allname:]
 ➣ [Allbio:]  
-➣ [Gc]
-➣ [Speed]
-➣ [Conban]
-➣ [Copy @] 
+➣ [Gc]☆ดูผู้สร้างห้อง
+➣ [Speed]☆สปีดบอท
+➣ [Conban]➣เชคแบน
+➣ [Mycopy @] ➣ก้อปปี้โปรไฟล์
 ➣ [Copy1 @] 
 ➣ [Copy2 @]
 ➣ [Copy3 @]  
 ➣ [Copy4 @]  
 ➣ [Copy5 @]  
-➣ [backup @     
-➣ [Like:on/off] 
-➣ [Add on/off] 	 
-➣ [Join on/off] 	   
-➣ [Contact on/off] 	
-➣ [Leave on/off]  
-➣ [Share on/off]           
-➣ [Add on/off] 		   
-➣ [Jam on/off]			   
-➣ [Jam say:]			   
+➣ [Mybackup @ ]➣กลับคืนค่าก้อปปี้
+➣ [Like:on/off] ➣ออโต้ไลค์ เปิด/ปิด
+➣ [Add on/off] ➣ออโต้แอด เปิด/ปิด
+➣ [Join on/off]➣ออโต้เข้ากลุ่ม เปิด/ปิด
+➣ [Contact on/off]➣อ่านคอนแทค เปิด/ปิด
+➣ [Leave on/off] ➣ออโต้ออกแชทรวม เปิด/ปิด
+➣ [Share on/off]➣โชว์ลิ้งโพส เปิด/ปิด
+➣ [Getname @]➣เชคชื่อเพื่อน 		   
+➣ [Getbio @]➣
+➣ [Getprofile @]➣เชคเสตัสเพื่อน
+➣ [Jam on/off]➣
+➣ [Jam say:]
 ➣ [Com on/off]	
 ➣ [Message set:]	
 ➣ [Comment set:]	
 ➣ [Pesan add:]	
 ||===== P R O T E C T =====||        
 ➣ [Panick:on/off]      
-➣ [Protect on]			   
-➣ [Qrprotect on/off]			   
-➣ [Inviteprotect on/off]			   
-➣ [Cancelprotect on/off]		   
+➣ [Allprotect on/off]➣ล้อกทั้งหมด เปิด/ปิด
+➣ [Protect on]☆ป้องกันเปิด/ปิด
+➣ [Qrprotect on/off]☆ล้อกคิวอารโค้ตเปิด/ปิด
+➣ [Inviteprotect on/off]☆เชินเปิด/ปิด			   
+➣ [Cancelprotect on/off]ยกเชินเปิด/ปิด		   
 ➣[Staff add/remove @]	   
 ||======= FOR ADMIN =======||
 
-                     *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.:
-                      K̲̲̅̅ ̲̲̅̅I̲̲̅̅ ̲̲̅̅E̲̲̅̅B̲̲̅̅O̲̲̅̅ ̲̲̅̅T̲̲̅̅ ̲̲̅̅L̲̲̅̅O̲̲̅̅V̲̲̅̅E̲̲̅̅L̲̲̅̅N̲̲̅̅E̲̲̅̅
-                      *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.
+                 *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.:
+                  K̲̲̅̅ ̲̲̅̅I̲̲̅̅ ̲̲̅̅E̲̲̅̅B̲̲̅̅O̲̲̅̅ ̲̲̅̅T̲̲̅̅ ̲̲̅̅L̲̲̅̅O̲̲̅̅V̲̲̅̅E̲̲̅̅L̲̲̅̅N̲̲̅̅E̲̲̅̅
+                  *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.
 	            Http://line.me/ti/p/~getk3333
-                     *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.:
-                      K̲̲̅̅ ̲̲̅̅I̲̲̅̅ ̲̲̅̅E̲̲̅̅B̲̲̅̅O̲̲̅̅ ̲̲̅̅T̲̲̅̅ ̲̲̅̅L̲̲̅̅O̲̲̅̅V̲̲̅̅E̲̲̅̅L̲̲̅̅N̲̲̅̅E̲̲̅̅
-                     *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.
-                    
+                 *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.:
+                  K̲̲̅̅ ̲̲̅̅I̲̲̅̅ ̲̲̅̅E̲̲̅̅B̲̲̅̅O̲̲̅̅ ̲̲̅̅T̲̲̅̅ ̲̲̅̅L̲̲̅̅O̲̲̅̅V̲̲̅̅E̲̲̅̅L̲̲̅̅N̲̲̅̅E̲̲̅̅
+                 *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.
+||==============================================||
 """
 
 help2Message =""".     *.:｡ ✿*ﾟ‘ﾟ･✿.｡.:* *.:
@@ -1440,6 +1448,140 @@ def bot(op):
                 cl.sendText(msg.to,"""╔══════════════
 💥ผู้สร้างกลุ่ม Creator 💥Group""")
 #-----------------------------------------------------------
+            elif "Getname" in msg.text:
+                key = eval(msg.contentMetadata["MENTION"])
+                key1 = key["MENTIONEES"][0]["M"]
+                contact = cl.getContact(key1)
+                cu = cl.channel.getCover(key1)
+                try:
+                    cl.sendText(msg.to, "===[DisplayName]===\n" + contact.displayName)
+                except:
+                    cl.sendText(msg.to, "===[DisplayName]===\n" + contact.displayName)
+
+
+            elif "Getprofile" in msg.text:
+                key = eval(msg.contentMetadata["MENTION"])
+                key1 = key["MENTIONEES"][0]["M"]
+                contact = cl.getContact(key1)
+                cu = cl.channel.getCover(key1)
+                path = str(cu)
+                image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
+                try:
+                    cl.sendText(msg.to,"💗ชื่อ💗 :\n" + contact.displayName + "\n\n💗สเตตัส💗 :\n" + contact.statusMessage)
+                    cl.sendText(msg.to,"Profile Picture " + contact.displayName)
+                    cl.sendImageWithURL(msg.to,image)
+                    cl.sendText(msg.to,"Cover " + contact.displayName)
+                    cl.sendImageWithURL(msg.to,path)
+                except:
+                    pass
+
+
+            elif "Getcontact" in msg.text:
+                key = eval(msg.contentMetadata["MENTION"])
+                key1 = key["MENTIONEES"][0]["M"]                
+                mmid = cl.getContact(key1)
+                msg.contentType = 13
+                msg.contentMetadata = {"mid": key1}
+                cl.sendMessage(msg)
+
+            elif "Getinfo" in msg.text:
+                key = eval(msg.contentMetadata["MENTION"])
+                key1 = key["MENTIONEES"][0]["M"]
+                contact = cl.getContact(key1)
+                cu = cl.channel.getCover(key1)
+                try:
+                    cl.sendText(msg.to,"Nama :\n" + contact.displayName + "\n\nMid :\n" + contact.mid + "\n\nBio :\n" + contact.statusMessage + "\n\nProfile Picture :\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n\nHeader :\n" + str(cu))
+                except:
+                    cl.sendText(msg.to,"Nama :\n" + contact.displayName + "\n\nMid :\n" + contact.mid + "\n\nBio :\n" + contact.statusMessage + "\n\nProfile Picture :\n" + str(cu))
+
+
+            elif "Getbio" in msg.text:
+                key = eval(msg.contentMetadata["MENTION"])
+                key1 = key["MENTIONEES"][0]["M"]
+                contact = cl.getContact(key1)
+                cu = cl.channel.getCover(key1)
+                try:
+                    cl.sendText(msg.to, "===[StatusMessage]===\n" + contact.statusMessage)
+                except:
+                    cl.sendText(msg.to, "===[StatusMessage]===\n" + contact.statusMessage)
+#----------------------------------------------------
+            elif "Mycopy @" in msg.text:
+                if msg.toType == 2:
+                    if msg.from_ in admin:
+                        print "[COPY] Ok"
+                        _name = msg.text.replace("Mycopy @","")
+                        _nametarget = _name.rstrip('  ')
+                        gs = cl.getGroup(msg.to)
+                        targets = []
+                        for g in gs.members:
+                            if _nametarget == g.displayName:
+                                targets.append(g.mid)
+                        if targets == []:
+                            cl.sendText(msg.to, "Tidak Ada Target Copy")
+                        else:
+                            for target in targets:
+                                try:
+                                   cl.cloneContactProfile(target)
+                                   cl.sendText(msg.to, "Sukses Copy Profile")
+                                except Exception as e:
+                                    print e
+#=================================================
+            elif msg.text in ["Mybackup"]:
+                try:
+                    cl.updateDisplayPicture(mybackup.pictureStatus)
+                    cl.updateProfile(mybackup)
+                    cl.sendText(msg.to, "Backup Sukses Bosqu")
+                except Exception as e:
+                    cl.sendText(msg.to, str (e))
+
+
+#-------------------------------- PP BY TAG ---------------------------------
+            elif "pp @" in msg.text:
+                if msg.toType == 2:
+                    cover = msg.text.replace("pp @","")
+                    _nametarget = cover.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to,"Not found")
+                    else:
+                        for target in targets:
+                            try:
+                                h = cl.getContact(target)
+                                cl.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/" + h.pictureStatus)
+                                xname = cl.getContact(msg.from_).displayName
+                                cl.sendText(msg.to,"Kepo Kaka Yaa "+xname+"\n   (｀・ω・´)\n \n"  +  datetime.now().strftime('%H:%M:%S'))
+                            except Exception as error:
+                                print error
+                                cl.sendText(msg.to,"Upload image failed.")
+
+            elif "Pp @" in msg.text:
+                if msg.toType == 2:
+                    cover = msg.text.replace("Pp @","")
+                    _nametarget = cover.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to,"Not found")
+                    else:
+                        for target in targets:
+                            try:
+                                h = cl.getContact(target)
+                                cl.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/" + h.pictureStatus)
+                            except Exception as error:
+                                print error
+                                cl.sendText(msg.to,"Upload image failed.")
+
+            elif msg.text.lower() in ["pap owner","pap creator"]:
+                                cl.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/0hQHBfiuxIDmd_HyI5amNxMENaAAoIMQgvBywTVFNIAgRTLk9kRHBCAlkcAFMGKkBiS3hAUQgbBVFU")
+#----------------------------------------------------------------------
+
             elif msg.text in ["Rejectall"]:
                 gid = cl.getGroupIdsInvited()
                 for i in gid:
